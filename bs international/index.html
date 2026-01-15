@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BS International Pvt. Ltd. | Premier Garment Manufacturer in Nepal</title>
+  <meta name="description" content="BS International Pvt. Ltd. - Nepal's leading garment manufacturer. Specializing in high-quality export-standard apparel, custom stitching, and uniforms since 2017." />
+  <meta name="keywords" content="Nepal garment manufacturer, BS International, custom apparel Nepal, T-shirts Nepal, jackets manufacturer, TRIBE brand, ASCENT brand, Lalitpur garments" />
+  <meta name="author" content="BS International Pvt. Ltd." />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://bsinternational.com.np/" />
+  <meta property="og:title" content="BS International Pvt. Ltd. | Premier Garment Manufacturer in Nepal" />
+  <meta property="og:description" content="Nepal's leading garment manufacturer since 2017. High-quality T-shirts, jackets, trousers & custom stitching with 60+ skilled employees." />
+  <meta property="og:image" content="https://gcmnepal-my.sharepoint.com/personal/19754_globalcollege_edu_np/_layouts/15/embed.aspx?UniqueId=203a7f98-0087-4c3c-8d01-c56eaecc6fdb" />
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:image" content="https://gcmnepal-my.sharepoint.com/personal/19754_globalcollege_edu_np/_layouts/15/embed.aspx?UniqueId=203a7f98-0087-4c3c-8d01-c56eaecc6fdb" />
+  <meta property="twitter:title" content="BS International Pvt. Ltd. | Premier Garment Manufacturer" />
+  <meta property="twitter:description" content="Nepal's leading garment manufacturer since 2017" />
+  
+  <!-- Favicon - TRIBE Certificate Preview -->
+  <link rel="icon" type="image/x-icon" href="https://gcmnepal-my.sharepoint.com/personal/19754_globalcollege_edu_np/_layouts/15/embed.aspx?UniqueId=203a7f98-0087-4c3c-8d01-c56eaecc6fdb" />
+  <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>👔</text></svg>" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style>
+    :root {
+      --nepal-red: #DC143C;
+      --nepal-blue: #003893;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      overflow-x: hidden;
+    }
+    .font-montserrat {
+      font-family: 'Montserrat', sans-serif;
+    }
+    .gradient-text {
+      background: linear-gradient(135deg, #003893, #DC143C);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-section {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 60%, #991b1b 100%);
+      position: relative;
+    }
+    .hero-pattern::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+    .card-hover {
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+    .card-hover::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, #003893, #DC143C);
+      opacity: 1;
+    }
+    .card-hover:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+    }
+    .nav-link {
+      position: relative;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #DC143C;
+      transition: width 0.3s ease;
+    }
+    .nav-link:hover::after, .nav-link.active::after {
+      width: 100%;
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    
+    *:focus-visible {
+      outline: 3px solid #DC143C;
+      outline-offset: 2px;
+    }
+    
+    @media print {
+      header, .hero-pattern, #backToTop, #whatsappFloat { display: none !important; }
+      body { padding-top: 0; }
+      section { page-break-inside: avoid; }
+    }
+    
+    #whatsappFloat {
+      position: fixed;
+      bottom: 90px;
+      right: 24px;
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, #25D366, #128C7E);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      z-index: 999;
+      animation: pulse-ring 2s infinite;
+    }
+    
+    #whatsappFloat:hover {
+      transform: scale(1.1);
+      box-shadow: 0 12px 30px rgba(37, 211, 102, 0.6);
+    }
+    
+    @keyframes pulse-ring {
+      0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+      }
+      70% {
+        box-shadow: 0 0 0 20px rgba(37, 211, 102, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+      }
+    }
+    
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(4px);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+    
+    .modal-backdrop.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .modal-content {
+      background: white;
+      border-radius: 20px;
+      max-width: 900px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      transform: scale(0.9) translateY(20px);
+      transition: all 0.3s ease;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    }
+    
+    .modal-backdrop.active .modal-content {
+      transform: scale(1) translateY(0);
+    }
+    
+    .product-image-modal {
+      width: 100%;
+      height: 300px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 6rem;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .product-image-modal::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+      animation: shine 3s infinite;
+    }
+    
+    @keyframes shine {
+      0% { transform: translateX(-100%) translateY(-100%); }
+      100% { transform: translateX(100%) translateY(100%); }
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+  
+  <!-- Navigation -->
+  <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-slate-900/95 backdrop-blur-md text-white border-b border-white/10 shadow-lg">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+      <a href="#home" class="flex items-center gap-3 font-montserrat text-xl font-extrabold group">
+        <span class="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-red-600 to-blue-800 text-white shadow-lg transition transform group-hover:scale-110">
+          <i class="fa-solid fa-shirt"></i>
+        </span>
+        <div class="flex flex-col">
+          <span class="bg-gradient-to-r from-white to-slate-200 bg-clip-text text-transparent leading-none">BS International</span>
+          <span class="text-[10px] text-red-400 font-medium tracking-widest uppercase">Made in Nepal</span>
+        </div>
+      </a>
+      
+      <button id="menuBtn" class="lg:hidden text-2xl text-white hover:text-red-400 transition" aria-label="Open menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      
+      <div id="navLinks" class="hidden items-center gap-8 text-sm font-semibold lg:flex">
+        <a href="index.html" class="nav-link text-white/90 hover:text-red-400 transition">Home</a>
+        <a href="about.html" class="nav-link text-white/90 hover:text-red-400 transition">About</a>
+        <a href="brands.html" class="nav-link text-white/90 hover:text-red-400 transition">Brands</a>
+        <a href="products.html" class="nav-link text-white/90 hover:text-red-400 transition">Products</a>
+        <a href="team.html" class="nav-link text-white/90 hover:text-red-400 transition">Team</a>
+        <a href="contact.html" class="nav-link text-white/90 hover:text-red-400 transition">Contact</a>
+        <a href="tel:+9779851158989" class="ml-4 rounded-full bg-red-600 px-5 py-2 text-white transition hover:bg-red-700 shadow-md hover:scale-105">
+          <i class="fa-solid fa-phone mr-2"></i> Call Now
+        </a>
+        <button onclick="openQuoteModal()" class="ml-2 rounded-full bg-blue-800 px-5 py-2 text-white transition hover:bg-blue-900 shadow-md hover:scale-105">
+          <i class="fa-solid fa-file-invoice mr-2"></i> Quick Quote
+        </button>
+      </div>
+    </nav>
+    
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden border-t border-white/10 bg-slate-900 px-6 pb-6 lg:hidden">
+      <div class="flex flex-col gap-4 pt-4 text-sm font-semibold text-center">
+        <a href="index.html" class="nav-link block text-white/90 hover:text-red-400 py-2">Home</a>
+        <a href="about.html" class="nav-link block text-white/90 hover:text-red-400 py-2">About</a>
+        <a href="brands.html" class="nav-link block text-white/90 hover:text-red-400 py-2">Brands</a>
+        <a href="products.html" class="nav-link block text-white/90 hover:text-red-400 py-2">Products</a>
+        <a href="team.html" class="nav-link block text-white/90 hover:text-red-400 py-2">Team</a>
+        <a href="contact.html" class="nav-link block text-white/90 hover:text-red-400 py-2">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="home" class="hero-section hero-pattern relative overflow-hidden text-white pt-32 pb-24 lg:pt-48 lg:pb-32">
+      <div class="mx-auto flex max-w-7xl flex-col items-center px-6 text-center relative z-10">
+        <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-red-500/30 bg-red-900/20 px-4 py-1.5 backdrop-blur-sm animate-[fadeInUp_0.6s_ease-out]">
+          <span class="flex h-2 w-2 rounded-full bg-red-500 animate-pulse"></span>
+          <span class="text-xs font-bold uppercase tracking-wider text-red-300">Proudly Nepali Brand</span>
+        </div>
+        
+        <h1 class="max-w-4xl font-montserrat text-4xl font-extrabold leading-tight md:text-6xl lg:text-7xl drop-shadow-lg animate-[fadeInUp_0.8s_ease-out]">
+          Crafting Excellence in <br/>
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-white">Every Stitch</span>
+        </h1>
+        
+        <p class="mt-6 max-w-2xl text-lg text-slate-200 md:text-xl leading-relaxed animate-[fadeInUp_1s_ease-out]">
+          BS International Pvt. Ltd. is Nepal's premier garment manufacturer. We blend traditional craftsmanship with modern technology to deliver world-class apparel.
+        </p>
+        
+        <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 animate-[fadeInUp_1.2s_ease-out]">
+          <a href="products.html" class="w-full sm:w-auto rounded-full bg-red-600 px-8 py-4 text-base font-bold text-white shadow-lg transition hover:-translate-y-1 hover:shadow-red-900/30 hover:bg-red-700">
+            View Our Products
+          </a>
+          <a href="contact.html" class="w-full sm:w-auto rounded-full border-2 border-white/20 bg-white/5 px-8 py-4 text-base font-bold text-white backdrop-blur-sm transition hover:-translate-y-1 hover:bg-white hover:text-blue-900">
+            Get a Quote
+          </a>
+        </div>
+
+        <div class="mt-16 grid grid-cols-2 gap-4 md:gap-12 lg:grid-cols-4 border-t border-white/10 pt-12 animate-[fadeIn_1.5s_ease-out]">
+           <div class="text-center">
+             <div class="text-3xl font-bold text-white font-montserrat">2017</div>
+             <div class="text-xs text-slate-400 uppercase tracking-wide mt-1">Established</div>
+           </div>
+           <div class="text-center">
+             <div class="text-3xl font-bold text-white font-montserrat">60+</div>
+             <div class="text-xs text-slate-400 uppercase tracking-wide mt-1">Skilled Staff</div>
+           </div>
+           <div class="text-center">
+             <div class="text-3xl font-bold text-white font-montserrat">5k+</div>
+             <div class="text-xs text-slate-400 uppercase tracking-wide mt-1">Monthly Output</div>
+           </div>
+           <div class="text-center">
+             <div class="text-3xl font-bold text-white font-montserrat" id="yearsInBusiness">8+</div>
+             <div class="text-xs text-slate-400 uppercase tracking-wide mt-1">Years of Service</div>
+           </div>
+        </div>
+      </div>
+      
+      <div class="absolute bottom-0 left-0 right-0">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="w-full h-auto text-slate-50 fill-current">
+          <path fill-opacity="1" d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,224C672,245,768,267,864,261.3C960,256,1056,224,1152,197.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+        </svg>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-slate-50">
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="text-center mb-16">
+          <h2 class="reveal font-montserrat text-3xl font-bold text-slate-900 md:text-4xl">Our Nepali Roots</h2>
+          <div class="mx-auto mt-4 h-1 w-24 rounded bg-gradient-to-r from-blue-700 to-red-600"></div>
+          <p class="reveal mt-4 text-lg text-slate-600">From Salyan to Global Standards - A Story of Grit</p>
+        </div>
+        
+        <div class="grid gap-12 lg:grid-cols-2 items-center">
+          <div class="space-y-6 text-slate-700 leading-relaxed reveal text-justify">
+            <p>
+              Founded on <strong class="text-blue-800">February 7, 2017</strong>, BS International Pvt. Ltd. is the brainchild of <strong class="text-blue-800">Mr. Bharat Sharma</strong>. Born in the hills of Bagchaur Municipality, Salyan, Mr. Sharma's journey is a testament to Nepali resilience.
+            </p>
+            <p>
+              Starting as a laboratory assistant in Bardiya, he expanded his horizons working in <strong class="text-slate-900">Malaysia and Saudi Arabia</strong>. Returning home with a vision to uplift Nepal's manufacturing sector, he established BS Furnishing and later BS International.
+            </p>
+            <p>
+              By learning best practices from <strong class="text-slate-900">India, China, and Bangladesh</strong>, we have brought international garment standards to Nepal. Today, we are proud to employ over <strong class="text-red-600">60 skilled Nepali professionals</strong>, contributing to the local economy.
+            </p>
+            
+            <div class="pt-4 flex gap-4">
+              <div class="flex items-center gap-3 rounded-lg bg-blue-50 px-4 py-3 border border-blue-100">
+                <i class="fa-solid fa-industry text-blue-700 text-xl"></i>
+                <span class="text-sm font-bold text-blue-900">Local Production</span>
+              </div>
+              <div class="flex items-center gap-3 rounded-lg bg-red-50 px-4 py-3 border border-red-100">
+                <i class="fa-solid fa-globe text-red-600 text-xl"></i>
+                <span class="text-sm font-bold text-red-900">Global Quality</span>
+              </div>
+            </div>
+            
+            <div class="pt-6">
+              <a href="about.html" class="inline-flex items-center gap-2 rounded-full bg-blue-700 px-6 py-3 text-white font-semibold shadow-lg transition hover:bg-blue-800 hover:-translate-y-1">
+                Read Full Story <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+          
+          <div class="relative reveal group">
+            <div class="absolute -inset-2 rounded-3xl bg-gradient-to-r from-blue-600 to-red-600 opacity-20 blur-lg transition duration-500 group-hover:opacity-40"></div>
+            <div class="card-hover overflow-hidden rounded-3xl bg-white shadow-xl relative">
+               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" class="w-full h-auto">
+                 <defs>
+                   <linearGradient id="flagGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                     <stop offset="0%" style="stop-color:#003893;stop-opacity:1"/>
+                     <stop offset="100%" style="stop-color:#DC143C;stop-opacity:1"/>
+                   </linearGradient>
+                   <pattern id="pattern" width="20" height="20" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                     <rect width="10" height="20" transform="translate(0,0)" fill="#ffffff05"></rect>
+                   </pattern>
+                 </defs>
+                 <rect fill="url(#flagGrad)" width="600" height="400"/>
+                 <rect fill="url(#pattern)" width="600" height="400"/>
+                 <path d="M0,400 L200,200 L300,300 L450,100 L600,400 Z" fill="rgba(255,255,255,0.1)"/>
+                 <text x="50%" y="45%" text-anchor="middle" fill="white" font-size="32" font-weight="800" font-family="Montserrat, sans-serif" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">BS INTERNATIONAL</text>
+                 <text x="50%" y="58%" text-anchor="middle" fill="#fbbf24" font-size="18" font-family="Montserrat, sans-serif" font-weight="600" letter-spacing="2px">EST. 2017</text>
+               </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Brands Section -->
+    <section id="brands" class="py-20 bg-white">
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="text-center mb-12">
+          <h2 class="reveal font-montserrat text-3xl font-bold text-slate-900 md:text-4xl">Registered Trademarks</h2>
+          <div class="mx-auto mt-4 h-1 w-24 rounded bg-gradient-to-r from-blue-700 to-red-600"></div>
+          <p class="reveal mt-4 text-slate-600">Officially recognized by the Department of Industry, Nepal</p>
+        </div>
+        
+        <div class="grid gap-8 lg:grid-cols-2">
+          <!-- TRIBE Brand -->
+          <div class="card-hover reveal rounded-3xl bg-gradient-to-br from-blue-50 to-white p-8 shadow-lg border border-slate-200">
+            <div class="flex items-center justify-between mb-6">
+              <div class="flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-600 to-blue-800 text-white text-3xl shadow-lg">
+                <i class="fas fa-tag"></i>
+              </div>
+              <span class="rounded-full bg-green-100 px-4 py-1.5 text-xs font-bold text-green-800 border border-green-300 flex items-center gap-1">
+                <i class="fa-solid fa-shield-halved"></i> DOI Registered
+              </span>
+            </div>
+            
+            <h3 class="font-montserrat text-3xl font-bold text-slate-900 mb-2 tracking-tight">TRIBE</h3>
+            <p class="text-sm text-slate-600 mb-6 flex items-center gap-2">
+              <i class="fa-solid fa-layer-group text-blue-600"></i>
+              Category: Garments & Apparel
+            </p>
+            
+            <div class="overflow-hidden rounded-2xl border-2 border-slate-200 bg-gradient-to-br from-slate-50 to-white shadow-inner h-72 relative group mb-6">
+               <div class="absolute inset-0 flex flex-col items-center justify-center text-slate-400 bg-white">
+                  <i class="fa-solid fa-certificate text-5xl mb-3 text-blue-200"></i>
+                  <p class="text-sm font-semibold">Certificate Preview</p>
+                  <i class="fa-solid fa-spinner fa-spin text-xl mt-2"></i>
+               </div>
+               <iframe title="TRIBE Trademark Certificate" loading="lazy" class="relative z-10 w-full h-full" src="https://gcmnepal-my.sharepoint.com/personal/19754_globalcollege_edu_np/_layouts/15/embed.aspx?UniqueId=6de69742-1101-4963-bbab-ad9f316d6247" onload="this.previousElementSibling.style.display='none'"></iframe>
+            </div>
+            
+            <div class="space-y-3">
+              <div class="flex items-center gap-2 text-sm text-slate-600">
+                <i class="fa-regular fa-calendar-check text-green-600"></i> 
+                <span><strong>Registered:</strong> April 28, 2021</span>
+              </div>
+              <div class="flex items-center gap-2 text-sm text-slate-600">
+                <i class="fa-solid fa-building text-blue-600"></i> 
+                <span><strong>Authority:</strong> Department of Industry, Nepal</span>
+              </div>
+            </div>
+            
+            <button onclick="window.open('https://gcmnepal-my.sharepoint.com/personal/19754_globalcollege_edu_np/_layouts/15/embed.aspx?UniqueId=6de69742-1101-4963-bbab-ad9f316d6247', '_blank')" class="mt-6 w-full rounded-xl bg-gradient-to-r from-blue-600 to-blue-800 px-6 py-3 text-white font-bold shadow-lg transition hover:from-blue-700 hover:to-blue-900 hover:shadow-xl hover:-translate-y-0.5 flex items-center justify-center gap-2">
+              <i class="fa-solid fa-external-link-alt"></i> View Full Certificate
+            </button>
+          </div>
+
+          <!-- ASCENT Brand -->
+          <div class="card-hover reveal rounded-3xl bg-gradient-to-br from-red-50 to-white p-8 shadow-lg border border-slate-200">
+             <div class="flex items-center justify-between mb-6">
+              <div class="flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-red-600 to-red-800 text-white text-3xl shadow-lg">
+                <i class="fas fa-file-alt"></i>
+              </div>
+              <span class="rounded-full bg-green-100 px-4 py-1.5 text-xs font-bold text-green-800 border border-green-300 flex items-center gap-1">
+                <i class="fa-solid fa-shield-halved"></i> DOI Registered
+              </span>
+            </div>
+            
+            <h3 class="font-montserrat text-3xl font-bold text-slate-900 mb-2 tracking-tight">ASCENT</h3>
+            <p class="text-sm text-slate-600 mb-6 flex items-center gap-2">
+              <i class="fa-solid fa-layer-group text-red-600"></i>
+              Category: Garments & Apparel
+            </p>
+            
+            <div class="overflow-hidden rounded-2xl border-2 border-slate-200 bg-gradient-to-br from-slate-50 to-white shadow-inner h-72 relative group mb-6">
+              <div class="absolute inset-0 flex flex-col items-center justify-center text-slate-400 bg-white">
+                  <i class="fa-solid fa-certificate text-5xl mb-3 text-red-200"></i>
+                  <p class="text-sm font-semibold">Certificate Preview</p>
+                  <i class="fa-solid fa-spinner fa-spin text-xl mt-2"></i>
+               </div>
+              <iframe title="ASCENT Trademark Certificate" loading="lazy" class="relative z-10 w-full h-full" src="https://gcmnepal-my.sharepoint.com/personal/19754_globalcollege_edu_np/_layouts/15/embed.aspx?UniqueId=938de2de-f7be-45a9-a45a-16f6416b32c7" onload="this.previousElementSibling.style.display='none'"></iframe>
+            </div>
+            
+            <div class="space-y-3">
+              <div class="flex items-center gap-2 text-sm text-slate-600">
+                <i class="fa-regular fa-calendar-check text-green-600"></i> 
+                <span><strong>Registered:</strong> April 28, 2021</span>
+              </div>
+              <div class="flex items-center gap-2 text-sm text-slate-600">
+                <i class="fa-solid fa-building text-red-600"></i> 
+                <span><strong>Authority:</strong> Department of Industry, Nepal</span>
+              </div>
+            </div>
+            
+            <button onclick="window.open('https://gcmnepal-my.sharepoint.com/personal/19754_globalcollege_edu_np/_layouts/15/embed.aspx?UniqueId=938de2de-f7be-45a9-a45a-16f6416b32c7', '_blank')" class="mt-6 w-full rounded-xl bg-gradient-to-r from-red-600 to-red-800 px-6 py-3 text-white font-bold shadow-lg transition hover:from-red-700 hover:to-red-900 hover:shadow-xl hover:-translate-y-0.5 flex items-center justify-center gap-2">
+              <i class="fa-solid fa-external-link-alt"></i> View Full Certificate
+            </button>
+          </div>
+        </div>
+        
+        <div class="mt-12 text-center reveal">
+          <a href="brands.html" class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-blue-700 to-red-600 px-8 py-3 text-white font-bold shadow-lg transition hover:shadow-xl hover:-translate-y-1">
+            <i class="fa-solid fa-certificate"></i> View Detailed Brand Information
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-24 bg-gradient-to-b from-blue-50/50 to-white">
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="text-center mb-16">
+          <h2 class="reveal font-montserrat text-3xl font-bold text-slate-900 md:text-4xl">Our Catalog</h2>
+          <div class="mx-auto mt-4 h-1 w-24 rounded bg-gradient-to-r from-blue-700 to-red-600"></div>
+          <p class="reveal mt-4 text-slate-600">Diverse garment solutions for every need</p>
+        </div>
+        
+        <div id="productsGrid" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 justify-center mb-8">
+        </div>
+        
+        <div id="viewMoreContainer" class="text-center mb-12">
+          <button id="viewMoreBtn" onclick="toggleViewMore()" class="inline-flex items-center gap-3 rounded-full bg-slate-900 px-8 py-3 text-base font-semibold text-white shadow-lg transition hover:-translate-y-1 hover:bg-slate-800">
+            View More Products <i class="fa-solid fa-chevron-down"></i>
+          </button>
+        </div>
+        
+        <div class="mt-8 text-center reveal flex flex-wrap justify-center gap-4">
+          <a href="products.html" class="inline-flex items-center justify-center gap-3 rounded-full bg-gradient-to-r from-blue-700 to-blue-900 px-10 py-4 text-base font-bold text-white shadow-xl transition hover:-translate-y-1 hover:shadow-2xl">
+            <i class="fa-solid fa-grid-2"></i> View All Products
+          </a>
+          <a href="#contact" class="inline-flex items-center justify-center gap-3 rounded-full bg-slate-900 px-10 py-4 text-base font-bold text-white shadow-xl transition hover:-translate-y-1 hover:bg-slate-800">
+            Request Custom Order <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <button onclick="openQuoteModal()" class="inline-flex items-center justify-center gap-3 rounded-full bg-blue-800 px-10 py-4 text-base font-bold text-white shadow-xl transition hover:-translate-y-1 hover:bg-blue-900">
+            <i class="fa-solid fa-file-invoice"></i> Get Quick Quote
+          </button>
+          <a href="https://wa.me/9779851158989?text=Hello%20BS%20International!%20I'm%20interested%20in%20your%20garment%20manufacturing%20services." target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-3 rounded-full bg-green-600 px-10 py-4 text-base font-bold text-white shadow-xl transition hover:-translate-y-1 hover:bg-green-700">
+            <i class="fa-brands fa-whatsapp"></i> WhatsApp Us
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="py-24 bg-white relative">
+      <div class="absolute top-0 right-0 -z-10 h-96 w-96 rounded-full bg-red-50/50 blur-3xl"></div>
+      <div class="absolute bottom-0 left-0 -z-10 h-96 w-96 rounded-full bg-blue-50/50 blur-3xl"></div>
+
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="text-center mb-16">
+          <h2 class="reveal font-montserrat text-3xl font-bold text-slate-900 md:text-4xl">Leadership Team</h2>
+          <div class="mx-auto mt-4 h-1 w-24 rounded bg-gradient-to-r from-blue-700 to-red-600"></div>
+          <p class="reveal mt-4 text-slate-600">Driven by Passion, Guided by Experience</p>
+        </div>
+        <div id="teamGrid" class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 justify-center"></div>
+        
+        <div class="mt-12 text-center reveal">
+          <a href="team.html" class="inline-flex items-center gap-2 rounded-full bg-slate-900 px-8 py-3 text-white font-bold shadow-lg transition hover:bg-slate-800 hover:-translate-y-1">
+            <i class="fa-solid fa-users"></i> View Full Team Details
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section id="stats" class="relative py-24 overflow-hidden bg-slate-900">
+      <div class="absolute inset-0 bg-gradient-to-br from-blue-900/90 to-red-900/90"></div>
+      <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#fff 1px, transparent 1px); background-size: 30px 30px;"></div>
+      
+      <div class="mx-auto max-w-7xl px-6 relative z-10 text-white">
+        <div class="grid gap-8 text-center sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-white/10">
+          <div class="reveal p-6">
+            <div class="flex justify-center mb-4 text-red-400 text-4xl"><i class="fa-solid fa-users-gear"></i></div>
+            <p class="stat-number font-montserrat text-5xl font-extrabold" data-target="60">0</p>
+            <p class="mt-2 text-sm font-semibold uppercase tracking-wider text-blue-200">Skilled Employees</p>
+          </div>
+          <div class="reveal p-6">
+             <div class="flex justify-center mb-4 text-blue-400 text-4xl"><i class="fa-solid fa-shirt"></i></div>
+            <p class="stat-number font-montserrat text-5xl font-extrabold" data-target="5000">0</p>
+            <p class="mt-2 text-sm font-semibold uppercase tracking-wider text-blue-200">Monthly Capacity</p>
+          </div>
+          <div class="reveal p-6">
+             <div class="flex justify-center mb-4 text-amber-400 text-4xl"><i class="fa-solid fa-award"></i></div>
+            <p class="stat-number font-montserrat text-5xl font-extrabold" id="yearsCounter" data-target="8">0</p>
+            <p class="mt-2 text-sm font-semibold uppercase tracking-wider text-blue-200">Years of Service</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-slate-50">
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="text-center mb-16">
+          <h2 class="reveal font-montserrat text-3xl font-bold text-slate-900 md:text-4xl">Get in Touch</h2>
+          <div class="mx-auto mt-4 h-1 w-24 rounded bg-gradient-to-r from-blue-700 to-red-600"></div>
+          <p class="reveal mt-4 text-slate-600">Visit our factory or send us a message</p>
+        </div>
+        
+        <div class="grid gap-8 lg:grid-cols-2">
+          <form id="contactForm" class="card-hover reveal rounded-3xl bg-white p-8 shadow-lg border border-slate-100">
+            <h3 class="font-montserrat text-2xl font-bold text-slate-900 mb-6">Send Message</h3>
+            <div class="space-y-5">
+              <div>
+                <label class="block text-xs font-bold uppercase text-slate-500 mb-1">Full Name</label>
+                <input id="name" type="text" required class="w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-slate-900 focus:border-blue-600 focus:ring-2 focus:ring-blue-100 focus:outline-none transition" placeholder="Your Name" />
+              </div>
+              <div class="grid grid-cols-2 gap-4">
+                 <div>
+                  <label class="block text-xs font-bold uppercase text-slate-500 mb-1">Email</label>
+                  <input id="email" type="email" required class="w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-slate-900 focus:border-blue-600 focus:ring-2 focus:ring-blue-100 focus:outline-none transition" placeholder="email@example.com" />
+                </div>
+                <div>
+                  <label class="block text-xs font-bold uppercase text-slate-500 mb-1">Phone</label>
+                  <input id="phone" type="tel" required class="w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-slate-900 focus:border-blue-600 focus:ring-2 focus:ring-blue-100 focus:outline-none transition" placeholder="+977-" />
+                </div>
+              </div>
+              <div>
+                <label class="block text-xs font-bold uppercase text-slate-500 mb-1">Message</label>
+                <textarea id="message" required rows="4" class="w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-slate-900 focus:border-blue-600 focus:ring-2 focus:ring-blue-100 focus:outline-none transition" placeholder="How can we help you?"></textarea>
+              </div>
+            </div>
+            <button type="submit" class="mt-8 w-full rounded-lg bg-gradient-to-r from-blue-800 to-blue-900 px-6 py-4 text-sm font-bold text-white shadow-lg transition hover:from-red-700 hover:to-red-800 hover:shadow-xl">
+              SUBMIT MESSAGE
+            </button>
+          </form>
+          
+          <div class="card-hover reveal rounded-3xl bg-gradient-to-br from-slate-900 to-blue-900 p-8 shadow-lg text-white h-full flex flex-col justify-between">
+            <div>
+              <h3 class="font-montserrat text-2xl font-bold mb-8">Contact Information</h3>
+              <div class="space-y-6">
+                <div class="flex items-start gap-4">
+                  <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white/10 text-red-400">
+                    <i class="fa-solid fa-location-dot"></i>
+                  </div>
+                  <div>
+                    <p class="font-bold text-lg">Factory Address</p>
+                    <p class="text-slate-300">Dhapakhel-23, Lalitpur, Bagmati Province, Nepal</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-4">
+                  <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white/10 text-blue-400">
+                    <i class="fa-solid fa-envelope"></i>
+                  </div>
+                  <div>
+                    <p class="font-bold text-lg">Email Us</p>
+                    <p class="text-slate-300">info@nabindhakal28.com.np</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-4">
+                  <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white/10 text-green-400">
+                    <i class="fa-solid fa-phone"></i>
+                  </div>
+                  <div>
+                    <p class="font-bold text-lg">Call Us</p>
+                    <p class="text-slate-300">+977-9851158989</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="mt-8 overflow-hidden rounded-xl border border-white/20 shadow-inner h-48 bg-white/5">
+              <iframe title="BS International Location" class="h-full w-full border-0 opacity-80 hover:opacity-100 transition" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3533.1943!2d85.3240!3d27.6720!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjfCsDQwJzE5LjIiTiA4NcKwMTknMjYuNCJF!5e0!3m2!1sen!2snp!4v1234567890" allowfullscreen loading="lazy"></iframe>
+            </div>
+          </div>
+        </div>
+        
+        <div class="mt-12 text-center reveal">
+          <a href="contact.html" class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-blue-700 to-blue-900 px-8 py-3 text-white font-bold shadow-lg transition hover:shadow-xl hover:-translate-y-1">
+            <i class="fa-solid fa-envelope"></i> View Full Contact Information & Hours
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-slate-950 pt-16 pb-8 text-white relative border-t-4 border-red-700">
+    <div class="mx-auto max-w-7xl px-6 text-center relative z-10">
+      <div class="flex items-center justify-center gap-3 mb-4">
+         <i class="fa-solid fa-shirt text-red-500 text-2xl"></i>
+         <h3 class="font-montserrat text-2xl font-bold">BS International Pvt. Ltd.</h3>
+      </div>
+      <p class="text-slate-400 max-w-lg mx-auto">Providing quality garment manufacturing services to Nepal and beyond since 2017.</p>
+      
+      <div class="mt-8 flex justify-center gap-4">
+        <a href="#" class="flex h-10 w-10 items-center justify-center rounded-full bg-slate-800 text-white transition hover:bg-[#1877F2]"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="flex h-10 w-10 items-center justify-center rounded-full bg-slate-800 text-white transition hover:bg-[#E4405F]"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="flex h-10 w-10 items-center justify-center rounded-full bg-slate-800 text-white transition hover:bg-[#0077B5]"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" class="flex h-10 w-10 items-center justify-center rounded-full bg-slate-800 text-white transition hover:bg-[#25D366]"><i class="fab fa-whatsapp"></i></a>
+      </div>
+      
+      <div class="mt-12 border-t border-slate-800 pt-8 space-y-4">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500">
+          <div>
+            © <span id="currentYear"></span> BS International Pvt. Ltd. 
+            <span class="hidden md:inline mx-2">|</span> 
+            <span class="text-slate-400">Made in Nepal 🇳🇵</span>
+          </div>
+          <div class="text-slate-400">
+            <span id="companyAge"></span>
+          </div>
+        </div>
+        <div class="text-xs text-slate-500">
+           Design & Development by <a href="https://nabindhakal28.com.np" target="_blank" class="text-blue-400 hover:text-white transition font-semibold">@cpnnabin</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button id="backToTop" class="fixed bottom-6 right-6 hidden h-12 w-12 items-center justify-center rounded-full bg-red-600 text-white shadow-lg transition hover:-translate-y-1 hover:bg-red-700 z-50" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <a id="whatsappFloat" href="https://wa.me/9779851158989?text=Hello%20BS%20International!%20I'm%20interested%20in%20your%20products." target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <div id="notification" class="fixed right-6 top-24 hidden z-50 transition-all duration-300 transform translate-y-0"></div>
+
+  <!-- Product Detail Modal -->
+  <div id="productModal" class="modal-backdrop">
+    <div class="modal-content">
+      <div class="product-image-modal" id="modalProductImage">
+        <i class="fa-solid fa-shirt"></i>
+      </div>
+      <div class="p-8">
+        <button onclick="closeProductModal()" class="absolute top-4 right-4 text-white hover:text-slate-200 text-3xl z-10" aria-label="Close">
+          <i class="fa-solid fa-times"></i>
+        </button>
+        <h3 id="modalProductName" class="font-montserrat text-3xl font-bold text-slate-900 mb-4"></h3>
+        <p id="modalProductDesc" class="text-slate-600 mb-6 text-lg leading-relaxed"></p>
+        
+        <div class="grid grid-cols-2 gap-4 mb-6">
+          <div class="bg-blue-50 p-4 rounded-lg border border-blue-100">
+            <div class="text-2xl text-blue-600 mb-2"><i class="fa-solid fa-check-circle"></i></div>
+            <h4 class="font-bold text-slate-900 mb-1">Premium Quality</h4>
+            <p class="text-sm text-slate-600">International standards with local craftsmanship</p>
+          </div>
+          <div class="bg-green-50 p-4 rounded-lg border border-green-100">
+            <div class="text-2xl text-green-600 mb-2"><i class="fa-solid fa-bolt"></i></div>
+            <h4 class="font-bold text-slate-900 mb-1">Fast Delivery</h4>
+            <p class="text-sm text-slate-600">Quick turnaround on bulk orders</p>
+          </div>
+          <div class="bg-purple-50 p-4 rounded-lg border border-purple-100">
+            <div class="text-2xl text-purple-600 mb-2"><i class="fa-solid fa-palette"></i></div>
+            <h4 class="font-bold text-slate-900 mb-1">Custom Design</h4>
+            <p class="text-sm text-slate-600">Tailored to your specifications</p>
+          </div>
+          <div class="bg-orange-50 p-4 rounded-lg border border-orange-100">
+            <div class="text-2xl text-orange-600 mb-2"><i class="fa-solid fa-tag"></i></div>
+            <h4 class="font-bold text-slate-900 mb-1">Best Pricing</h4>
+            <p class="text-sm text-slate-600">Competitive rates for bulk orders</p>
+          </div>
+        </div>
+        
+        <div class="flex gap-3">
+          <button onclick="requestQuoteForProduct()" class="flex-1 bg-blue-800 text-white px-6 py-3 rounded-lg font-bold hover:bg-blue-900 transition flex items-center justify-center gap-2">
+            <i class="fa-solid fa-file-invoice"></i> Request Quote
+          </button>
+          <a id="modalWhatsApp" href="#" target="_blank" rel="noopener noreferrer" class="flex-1 bg-green-600 text-white px-6 py-3 rounded-lg font-bold hover:bg-green-700 transition flex items-center justify-center gap-2">
+            <i class="fa-brands fa-whatsapp"></i> WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quick Quote Modal -->
+  <div id="quoteModal" class="modal-backdrop">
+    <div class="modal-content">
+      <div class="p-6 border-b border-slate-200">
+        <div class="flex items-center justify-between">
+          <h3 class="text-2xl font-bold text-slate-900 font-montserrat">Quick Quote Request</h3>
+          <button onclick="closeQuoteModal()" class="text-slate-400 hover:text-slate-600 text-2xl" aria-label="Close modal">
+            <i class="fa-solid fa-times"></i>
+          </button>
+        </div>
+      </div>
+      <form id="quoteForm" class="p-6 space-y-4">
+        <div>
+          <label class="block text-sm font-bold text-slate-700 mb-2">Your Name *</label>
+          <input type="text" id="quoteName" required class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-100" placeholder="Full Name">
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label class="block text-sm font-bold text-slate-700 mb-2">Email *</label>
+            <input type="email" id="quoteEmail" required class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-100" placeholder="your@email.com">
+          </div>
+          <div>
+            <label class="block text-sm font-bold text-slate-700 mb-2">Phone *</label>
+            <input type="tel" id="quotePhone" required class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-100" placeholder="+977-">
+          </div>
+        </div>
+        <div>
+          <label class="block text-sm font-bold text-slate-700 mb-2">Product Type *</label>
+          <select id="quoteProduct" required class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-100">
+            <option value="">Select Product</option>
+            <option value="T-Shirts">T-Shirts</option>
+            <option value="Jackets">Jackets</option>
+            <option value="Trousers">Trousers</option>
+            <option value="Sportswear">Sportswear</option>
+            <option value="Uniforms">Uniforms</option>
+            <option value="Hoodies">Hoodies</option>
+            <option value="Polo Shirts">Polo Shirts</option>
+            <option value="Sweatshirts">Sweatshirts</option>
+            <option value="Caps & Hats">Caps & Hats</option>
+            <option value="Other">Other (Custom)</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-sm font-bold text-slate-700 mb-2">Quantity *</label>
+          <input type="number" id="quoteQuantity" required min="50" class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-100" placeholder="Minimum 50 pieces">
+        </div>
+        <div>
+          <label class="block text-sm font-bold text-slate-700 mb-2">Additional Details</label>
+          <textarea id="quoteDetails" rows="3" class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-100" placeholder="Size, color, design requirements..."></textarea>
+        </div>
+        <div class="flex gap-3 pt-4">
+          <button type="submit" class="flex-1 bg-blue-800 text-white px-6 py-3 rounded-lg font-bold hover:bg-blue-900 transition">
+            <i class="fa-solid fa-paper-plane mr-2"></i> Send Quote Request
+          </button>
+          <a id="whatsappQuote" href="#" target="_blank" rel="noopener noreferrer" class="flex-1 bg-green-600 text-white px-6 py-3 rounded-lg font-bold hover:bg-green-700 transition text-center">
+            <i class="fa-brands fa-whatsapp mr-2"></i> Send via WhatsApp
+          </a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Data
+    const allProducts = [
+      { name: 'T-Shirts', desc: 'Custom prints, cotton blends, and jersey fabrics for all occasions and seasons.', icon: 'fa-shirt', color: 'text-blue-600', bg: 'bg-blue-50', gradient: 'linear-gradient(135deg, #3b82f6, #1d4ed8)' },
+      { name: 'Jackets', desc: 'Windbreakers, bombers, and winter wear with premium insulation and durability.', icon: 'fa-vest', color: 'text-red-600', bg: 'bg-red-50', gradient: 'linear-gradient(135deg, #ef4444, #991b1b)' },
+      { name: 'Trousers', desc: 'Formal, chinos, and cargo pants with perfect fit and comfort.', icon: 'fa-user-tie', color: 'text-slate-700', bg: 'bg-slate-100', gradient: 'linear-gradient(135deg, #64748b, #334155)' },
+      { name: 'Sportswear', desc: 'Jerseys, tracksuits, and performance gear for athletes and teams.', icon: 'fa-person-running', color: 'text-orange-600', bg: 'bg-orange-50', gradient: 'linear-gradient(135deg, #f97316, #ea580c)' },
+      { name: 'Uniforms', desc: 'School, corporate, and industrial uniforms tailored to your specifications.', icon: 'fa-user-nurse', color: 'text-green-600', bg: 'bg-green-50', gradient: 'linear-gradient(135deg, #10b981, #059669)' },
+      { name: 'Hoodies', desc: 'Fleece hoodies with custom embroidery and screen printing options.', icon: 'fa-temperature-low', color: 'text-purple-600', bg: 'bg-purple-50', gradient: 'linear-gradient(135deg, #a855f7, #7e22ce)' },
+      { name: 'Polo Shirts', desc: 'Classic polo shirts in various colors with embroidered logos available.', icon: 'fa-shirt', color: 'text-indigo-600', bg: 'bg-indigo-50', gradient: 'linear-gradient(135deg, #6366f1, #4f46e5)' },
+      { name: 'Sweatshirts', desc: 'Comfortable sweatshirts perfect for casual wear and team merchandise.', icon: 'fa-clothes-hanger', color: 'text-pink-600', bg: 'bg-pink-50', gradient: 'linear-gradient(135deg, #ec4899, #db2777)' },
+      { name: 'Caps & Hats', desc: 'Custom caps and hats with embroidery or print for branding purposes.', icon: 'fa-hat-cowboy', color: 'text-amber-600', bg: 'bg-amber-50', gradient: 'linear-gradient(135deg, #f59e0b, #d97706)' }
+    ];
+
+    const team = [
+      { name: 'Bharat Sharma', role: 'Chairman', contact: '+977-9851158989' },
+      { name: 'Nabin Dhakal', role: 'Managing Director', contact: '+977-9869596970' },
+      { name: 'Rama Pun', role: 'Marketing Head', contact: '+977-9851111111' },
+      { name: 'Rabina Pun', role: 'Operations Head', contact: '+977-9851222222' }
+    ];
+
+    let showingAllProducts = false;
+    let currentProduct = null;
+
+    // Calculate company age
+    function calculateCompanyAge() {
+      const foundingDate = new Date('2017-02-07');
+      const today = new Date();
+      const diffTime = Math.abs(today - foundingDate);
+      const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+      const years = Math.floor(diffDays / 365);
+      const months = Math.floor((diffDays % 365) / 30);
+      
+      return { years, months, total: years };
+    }
+
+    // Render Products
+    function renderProducts(showAll = false) {
+      const productsGrid = document.getElementById('productsGrid');
+      productsGrid.innerHTML = '';
+      const productsToShow = showAll ? allProducts : allProducts.slice(0, 6);
+      
+      productsToShow.forEach((item, i) => {
+        const el = document.createElement('div');
+        el.className = `card-hover reveal group relative overflow-hidden rounded-2xl border border-slate-100 bg-white p-6 shadow-sm transition hover:shadow-md cursor-pointer`;
+        el.style.transitionDelay = `${i * 100}ms`;
+        el.onclick = () => openProductModal(item);
+        el.innerHTML = `
+          <div class="mb-4 flex h-14 w-14 items-center justify-center rounded-xl ${item.bg} ${item.color} text-2xl transition-transform group-hover:scale-110">
+            <i class="fa-solid ${item.icon}"></i>
+          </div>
+          <h3 class="mb-2 font-montserrat text-lg font-bold text-slate-900 group-hover:text-blue-700 transition-colors">${item.name}</h3>
+          <p class="text-sm text-slate-500 mb-4">${item.desc}</p>
+          <div class="absolute right-4 top-4 opacity-0 transition-opacity group-hover:opacity-100">
+            <i class="fa-solid fa-arrow-right -rotate-45 text-slate-300"></i>
+          </div>
+          <div class="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+            <span class="flex items-center gap-1"><i class="fa-solid fa-eye"></i> View Details</span>
+            <span class="flex items-center gap-1"><i class="fa-solid fa-chevron-right"></i></span>
+          </div>
+        `;
+        productsGrid.appendChild(el);
+      });
+      
+      setTimeout(() => {
+        document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+      }, 100);
+    }
+
+    // Toggle View More
+    function toggleViewMore() {
+      showingAllProducts = !showingAllProducts;
+      renderProducts(showingAllProducts);
+      const btn = document.getElementById('viewMoreBtn');
+      btn.innerHTML = showingAllProducts 
+        ? 'View Less <i class="fa-solid fa-chevron-up"></i>' 
+        : 'View More Products <i class="fa-solid fa-chevron-down"></i>';
+    }
+
+    // Open Product Modal
+    function openProductModal(product) {
+      currentProduct = product;
+      document.getElementById('modalProductName').textContent = product.name;
+      document.getElementById('modalProductDesc').textContent = product.desc;
+      const modalImage = document.getElementById('modalProductImage');
+      modalImage.style.background = product.gradient;
+      modalImage.innerHTML = `<i class="fa-solid ${product.icon}"></i>`;
+      
+      const whatsappLink = `https://wa.me/9779851158989?text=${encodeURIComponent(`Hello! I'm interested in ${product.name}. Please send me more details and pricing.`)}`;
+      document.getElementById('modalWhatsApp').href = whatsappLink;
+      
+      document.getElementById('productModal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    // Close Product Modal
+    function closeProductModal() {
+      document.getElementById('productModal').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    // Request Quote for Product
+    function requestQuoteForProduct() {
+      closeProductModal();
+      openQuoteModal();
+      if (currentProduct) {
+        document.getElementById('quoteProduct').value = currentProduct.name;
+      }
+    }
+
+    // Render Team
+    const teamGrid = document.getElementById('teamGrid');
+    team.forEach((member, i) => {
+      const el = document.createElement('div');
+      el.className = 'card-hover reveal flex flex-col items-center rounded-2xl bg-white p-6 shadow-sm border border-slate-100 text-center cursor-pointer';
+      el.style.transitionDelay = `${i * 100}ms`;
+      
+      // Make each team member card clickable to their profile page
+      let profileLink = '';
+      let gradientClass = '';
+      let colorClass = '';
+      
+      if (member.name === 'Bharat Sharma') {
+        profileLink = 'bharat-sharma.html';
+        gradientClass = 'bg-gradient-to-br from-blue-600 to-red-600';
+        colorClass = 'text-blue-600';
+      } else if (member.name === 'Nabin Dhakal') {
+        profileLink = 'nabin-dhakal.html';
+        gradientClass = 'bg-gradient-to-br from-purple-600 to-blue-600';
+        colorClass = 'text-purple-600';
+      } else if (member.name === 'Rama Pun') {
+        profileLink = 'rama-pun.html';
+        gradientClass = 'bg-gradient-to-br from-pink-600 to-purple-600';
+        colorClass = 'text-pink-600';
+      } else if (member.name === 'Rabina Pun') {
+        profileLink = 'rabina-pun.html';
+        gradientClass = 'bg-gradient-to-br from-orange-600 to-yellow-600';
+        colorClass = 'text-orange-600';
+      }
+      
+      el.onclick = () => window.location.href = profileLink;
+      
+      el.innerHTML = `
+        <div class="mb-4 flex h-20 w-20 items-center justify-center rounded-full ${gradientClass} text-white text-3xl shadow-lg border-2 border-white ring-2 ring-slate-100">
+          <i class="fa-solid fa-user-tie"></i>
+        </div>
+        <h3 class="font-montserrat text-lg font-bold text-slate-900">${member.name}</h3>
+        <p class="text-xs font-bold uppercase ${colorClass} tracking-wider mb-3">${member.role}</p>
+        <div class="rounded-full bg-slate-50 px-4 py-1 text-xs text-slate-600 hover:bg-${colorClass.split('-')[1]}-600 hover:text-white transition">
+          ${member.contact}
+        </div>
+        <div class="mt-3 text-xs ${colorClass} font-semibold">
+          <i class="fa-solid fa-arrow-right mr-1"></i> View Full Profile
+        </div>
+      `;
+      
+      teamGrid.appendChild(el);
+    });
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', () => {
+      renderProducts(false);
+      
+      const age = calculateCompanyAge();
+      document.getElementById('currentYear').textContent = new Date().getFullYear();
+      document.getElementById('companyAge').textContent = `Serving since Feb 7, 2017 | ${age.years}+ Years of Excellence`;
+      document.getElementById('yearsInBusiness').textContent = `${age.total}+`;
+      
+      const yearsCounter = document.getElementById('yearsCounter');
+      if (yearsCounter) {
+        yearsCounter.setAttribute('data-target', age.total);
+      }
+    });
+    
+    // Mobile Menu Toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      const icon = menuBtn.querySelector('i');
+      if (mobileMenu.classList.contains('hidden')) {
+        icon.classList.remove('fa-xmark');
+        icon.classList.add('fa-bars');
+      } else {
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-xmark');
+      }
+    });
+
+    // Scroll Effects
+    const navbar = document.querySelector('header');
+    const backToTop = document.getElementById('backToTop');
+    
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('shadow-xl', 'bg-slate-900/95');
+      } else {
+        navbar.classList.remove('shadow-xl', 'bg-slate-900/95');
+      }
+      
+      if (window.scrollY > 500) backToTop.classList.remove('hidden');
+      else backToTop.classList.add('hidden');
+      
+      revealOnScroll();
+    });
+
+    backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    // Smooth Scroll Links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href === '#') return;
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target) {
+          mobileMenu.classList.add('hidden');
+          window.scrollTo({
+            top: target.offsetTop - 100,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // Reveal Animation
+    const revealElements = document.querySelectorAll('.reveal');
+    function revealOnScroll() {
+      const windowHeight = window.innerHeight;
+      revealElements.forEach(el => {
+        const elementTop = el.getBoundingClientRect().top;
+        if (elementTop < windowHeight - 100) el.classList.add('visible');
+      });
+    }
+    revealOnScroll();
+
+    // Notification
+    const showNotification = (msg, type = 'success') => {
+      const notif = document.getElementById('notification');
+      notif.className = `fixed right-6 top-24 z-50 rounded-xl px-6 py-4 text-sm font-bold text-white shadow-2xl animate-[slideIn_0.3s_ease-out] ${type === 'error' ? 'bg-red-500' : 'bg-green-600'}`;
+      notif.innerHTML = `<i class="fa-solid ${type === 'error' ? 'fa-circle-exclamation' : 'fa-check-circle'} mr-2"></i> ${msg}`;
+      notif.classList.remove('hidden');
+      setTimeout(() => notif.classList.add('hidden'), 4000);
+    };
+
+    // Contact Form
+    document.getElementById('contactForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+      const message = document.getElementById('message').value;
+      
+      const subject = encodeURIComponent('Contact Form - ' + name);
+      const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\nMessage:\n${message}`);
+      // Send email from info@nabindhakal28.com.np (Zoho)
+      window.location.href = `mailto:info@nabindhakal28.com.np?subject=${subject}&body=${body}`;
+      
+      showNotification(`Thanks ${name}! Your message has been sent.`);
+      e.target.reset();
+    });
+
+    // Stats Counter
+    const statObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const target = +el.dataset.target;
+          let count = 0;
+          const inc = Math.ceil(target / 50);
+          const timer = setInterval(() => {
+            count += inc;
+            if (count >= target) {
+              el.textContent = target + (target > 50 ? '+' : '');
+              clearInterval(timer);
+            } else {
+              el.textContent = count;
+            }
+          }, 40);
+          statObserver.unobserve(el);
+        }
+      });
+    }, { threshold: 0.5 });
+    
+    document.querySelectorAll('.stat-number').forEach(el => statObserver.observe(el));
+
+    // Quote Modal
+    function openQuoteModal() {
+      document.getElementById('quoteModal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeQuoteModal() {
+      document.getElementById('quoteModal').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    document.getElementById('quoteModal').addEventListener('click', (e) => {
+      if (e.target.id === 'quoteModal') closeQuoteModal();
+    });
+    
+    document.getElementById('productModal').addEventListener('click', (e) => {
+      if (e.target.id === 'productModal') closeProductModal();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        if (document.getElementById('quoteModal').classList.contains('active')) closeQuoteModal();
+        if (document.getElementById('productModal').classList.contains('active')) closeProductModal();
+      }
+    });
+
+    // Quote Form Submit
+    document.getElementById('quoteForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      const name = document.getElementById('quoteName').value;
+      const email = document.getElementById('quoteEmail').value;
+      const phone = document.getElementById('quotePhone').value;
+      const product = document.getElementById('quoteProduct').value;
+      const quantity = document.getElementById('quoteQuantity').value;
+      const details = document.getElementById('quoteDetails').value;
+      
+      const subject = encodeURIComponent(`Quote Request - ${product} from ${name}`);
+      const body = encodeURIComponent(
+        `Quote Request Details:\n\n` +
+        `Name: ${name}\n` +
+        `Email: ${email}\n` +
+        `Phone: ${phone}\n` +
+        `Product: ${product}\n` +
+        `Quantity: ${quantity} pieces\n` +
+        `Details: ${details || 'N/A'}\n\n` +
+        `Please provide pricing and delivery timeline.`
+      );
+      
+      // Send quote request from info@nabindhakal28.com.np (Zoho)
+      window.open(`mailto:info@nabindhakal28.com.np?subject=${subject}&body=${body}`, '_blank');
+      
+      showNotification(`Quote request sent! We'll get back to you soon, ${name}.`);
+      closeQuoteModal();
+      e.target.reset();
+    });
+
+    // Update WhatsApp quote link dynamically
+    document.getElementById('quoteForm').addEventListener('input', () => {
+      const name = document.getElementById('quoteName').value;
+      const product = document.getElementById('quoteProduct').value;
+      const quantity = document.getElementById('quoteQuantity').value;
+      
+      let message = `Hello BS International! I'd like to request a quote.\n\n`;
+      if (name) message += `Name: ${name}\n`;
+      if (product) message += `Product: ${product}\n`;
+      if (quantity) message += `Quantity: ${quantity} pieces\n`;
+      message += `\nPlease send me pricing details.`;
+      
+      document.getElementById('whatsappQuote').href = `https://wa.me/9779851158989?text=${encodeURIComponent(message)}`;
+    });
+
+    // Add JSON-LD structured data
+    const structuredData = {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "BS International Pvt. Ltd.",
+      "description": "Premier garment manufacturer in Nepal specializing in high-quality apparel since 2017",
+      "url": "https://bsinternational.com.np",
+      "foundingDate": "2017-02-07",
+      "founder": {
+        "@type": "Person",
+        "name": "Bharat Sharma"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Dhapakhel-23",
+        "addressLocality": "Lalitpur",
+        "addressRegion": "Bagmati Province",
+        "addressCountry": "NP"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+977-9851158989",
+        "contactType": "Customer Service",
+        "email": "info@nabindhakal28.com.np"
+      },
+      "numberOfEmployees": "60+",
+      "brand": [
+        { "@type": "Brand", "name": "TRIBE" },
+        { "@type": "Brand", "name": "ASCENT" }
+      ]
+    };
+
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify(structuredData);
+    document.head.appendChild(script);
+  </script>
+</body>
+</html>
