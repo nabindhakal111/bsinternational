@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chat Assistant | BS International Pvt. Ltd.</title>
+  <meta name="description" content="Chat with BS International's virtual assistant for instant support and information." />
+  
+  <link rel="icon" type="image/x-icon" href="https://gcmnepal-my.sharepoint.com/personal/19754_globalcollege_edu_np/_layouts/15/embed.aspx?UniqueId=203a7f98-0087-4c3c-8d01-c56eaecc6fdb" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  
+  <style>
+    :root {
+      --nepal-red: #DC143C;
+      --nepal-blue: #003893;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      overflow-x: hidden;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .font-montserrat {
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .chat-container {
+      max-width: 900px;
+      width: 100%;
+      background: white;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      display: flex;
+      flex-direction: column;
+      height: 90vh;
+      max-height: 800px;
+    }
+    
+    .chat-header {
+      background: linear-gradient(135deg, var(--nepal-blue), var(--nepal-red));
+      color: white;
+      padding: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    
+    .chat-header-info {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .chat-avatar {
+      width: 50px;
+      height: 50px;
+      background: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      color: var(--nepal-blue);
+    }
+    
+    .chat-status {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      opacity: 0.95;
+    }
+    
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      background: #10b981;
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+    
+    .chat-messages {
+      flex: 1;
+      overflow-y: auto;
+      padding: 1.5rem;
+      background: #f8fafc;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    
+    .message {
+      display: flex;
+      gap: 0.75rem;
+      animation: slideIn 0.3s ease-out;
+    }
+    
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .message.bot {
+      align-self: flex-start;
+    }
+    
+    .message.user {
+      align-self: flex-end;
+      flex-direction: row-reverse;
+    }
+    
+    .message-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 1.1rem;
+    }
+    
+    .message.bot .message-avatar {
+      background: linear-gradient(135deg, var(--nepal-blue), var(--nepal-red));
+      color: white;
+    }
+    
+    .message.user .message-avatar {
+      background: #e2e8f0;
+      color: #475569;
+    }
+    
+    .message-content {
+      max-width: 70%;
+      padding: 0.875rem 1.125rem;
+      border-radius: 1.125rem;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    
+    .message.bot .message-content {
+      background: white;
+      color: #1e293b;
+      border-bottom-left-radius: 0.25rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    
+    .message.user .message-content {
+      background: linear-gradient(135deg, var(--nepal-blue), var(--nepal-red));
+      color: white;
+      border-bottom-right-radius: 0.25rem;
+    }
+    
+    .message-content a {
+      color: var(--nepal-red);
+      text-decoration: underline;
+      font-weight: 600;
+    }
+    
+    .message.user .message-content a {
+      color: white;
+      opacity: 0.95;
+    }
+    
+    .message-content strong {
+      font-weight: 700;
+    }
+    
+    .typing-indicator {
+      display: flex;
+      gap: 0.5rem;
+      padding: 0.875rem 1.125rem;
+      background: white;
+      border-radius: 1.125rem;
+      border-bottom-left-radius: 0.25rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      width: fit-content;
+    }
+    
+    .typing-indicator span {
+      width: 8px;
+      height: 8px;
+      background: #cbd5e1;
+      border-radius: 50%;
+      animation: typing 1.4s infinite;
+    }
+    
+    .typing-indicator span:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+    
+    .typing-indicator span:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+    
+    @keyframes typing {
+      0%, 60%, 100% { transform: translateY(0); }
+      30% { transform: translateY(-10px); }
+    }
+    
+    .chat-input-area {
+      padding: 1.25rem;
+      background: white;
+      border-top: 1px solid #e2e8f0;
+      display: flex;
+      gap: 0.75rem;
+      align-items: center;
+    }
+    
+    .chat-input {
+      flex: 1;
+      padding: 0.875rem 1.25rem;
+      border: 2px solid #e2e8f0;
+      border-radius: 50px;
+      font-size: 0.95rem;
+      outline: none;
+      transition: all 0.3s ease;
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    .chat-input:focus {
+      border-color: var(--nepal-blue);
+      box-shadow: 0 0 0 3px rgba(0, 56, 147, 0.1);
+    }
+    
+    .send-button {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, var(--nepal-blue), var(--nepal-red));
+      border: none;
+      border-radius: 50%;
+      color: white;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .send-button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    
+    .send-button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      transform: scale(1);
+    }
+    
+    .quick-replies {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+    }
+    
+    .quick-reply-btn {
+      padding: 0.5rem 1rem;
+      background: white;
+      border: 2px solid var(--nepal-blue);
+      color: var(--nepal-blue);
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .quick-reply-btn:hover {
+      background: var(--nepal-blue);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,56,147,0.3);
+    }
+    
+    .back-link {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background: white;
+      color: var(--nepal-blue);
+      padding: 0.75rem 1.5rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      z-index: 10;
+    }
+    
+    .back-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+    
+    .contact-card {
+      background: #f1f5f9;
+      padding: 1rem;
+      border-radius: 0.75rem;
+      margin-top: 0.5rem;
+      border-left: 4px solid var(--nepal-blue);
+    }
+    
+    .contact-card-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.5rem 0;
+    }
+    
+    .contact-card-item i {
+      color: var(--nepal-red);
+      width: 20px;
+    }
+    
+    @media (max-width: 768px) {
+      .chat-container {
+        height: 100vh;
+        max-height: 100vh;
+        border-radius: 0;
+      }
+      
+      .back-link {
+        top: 10px;
+        left: 10px;
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+      }
+      
+      .message-content {
+        max-width: 85%;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="index.html" class="back-link">
+    <i class="fa-solid fa-arrow-left"></i> Back to Home
+  </a>
+
+  <div class="chat-container">
+    <!-- Chat Header -->
+    <div class="chat-header">
+      <div class="chat-header-info">
+        <div class="chat-avatar">
+          <i class="fa-solid fa-robot"></i>
+        </div>
+        <div>
+          <div class="font-montserrat font-bold text-lg">BS Assistant</div>
+          <div class="chat-status">
+            <span class="status-dot"></span>
+            <span>Online • Ready to help</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <a href="index.html" class="text-white hover:text-red-200 transition">
+          <i class="fa-solid fa-times text-2xl"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Chat Messages Area -->
+    <div class="chat-messages" id="chatMessages">
+      <!-- Messages will be added here dynamically -->
+    </div>
+
+    <!-- Chat Input Area -->
+    <div class="chat-input-area">
+      <input 
+        type="text" 
+        id="chatInput" 
+        class="chat-input" 
+        placeholder="Type your message here..."
+        autocomplete="off"
+      />
+      <button id="sendButton" class="send-button">
+        <i class="fa-solid fa-paper-plane"></i>
+      </button>
+    </div>
+  </div>
+
+  <script>
+    // Enhanced AI-like Chatbot Logic
+    const chatData = {
+      // Team member database with phone number lookup
+      team: [
+        {
+          name: 'Bharat Sharma',
+          role: 'Founder & Chairman',
+          phone: '+977-9851158989',
+          phoneClean: '9851158989',
+          email: 'info@nabindhakal28.com.np',
+          bio: 'Founder of BS International Pvt. Ltd., born in Salyan. Led the company since 2017 with international experience from Malaysia and Saudi Arabia.',
+          keywords: ['bharat', 'sharma', 'founder', 'chairman', 'owner', 'ceo']
+        },
+        {
+          name: 'Nabin Dhakal',
+          role: 'Managing Director',
+          phone: '+977-9869596970',
+          phoneClean: '9869596970',
+          email: 'cpnnabingovnp@gmail.com',
+          website: 'nabindhakal28.com.np',
+          bio: 'Managing Director overseeing operations and strategic planning.',
+          keywords: ['nabin', 'dhakal', 'manager', 'managing', 'director', 'md']
+        },
+        {
+          name: 'Rama Pun',
+          role: 'Marketing Head',
+          phone: '+977-9851111111',
+          phoneClean: '9851111111',
+          bio: 'Marketing Head responsible for brand development and customer relations.',
+          keywords: ['rama', 'pun', 'marketing', 'brand']
+        },
+        {
+          name: 'Rabina Pun',
+          role: 'Operations Head',
+          phone: '+977-9851222222',
+          phoneClean: '9851222222',
+          bio: 'Operations Head managing production and quality control.',
+          keywords: ['rabina', 'pun', 'operations', 'production']
+        }
+      ],
+      
+      // Context-aware responses
+      companyInfo: {
+        name: 'BS International Pvt. Ltd.',
+        founded: 'February 7, 2017',
+        location: 'Dhapakhel-23, Lalitpur, Bagmati Province, Nepal',
+        employees: '60+',
+        capacity: '5000+ garments monthly',
+        specialization: 'Custom garment manufacturing',
+        minOrder: '50 pieces'
+      }
+    };
+
+    let conversationHistory = [];
+    let userName = '';
+    let awaitingName = true;
+
+    // Initialize chat
+    function initChat() {
+      addBotMessage(
+        "🙏 <strong>Namaste!</strong> Welcome to BS International Pvt. Ltd.<br><br>" +
+        "I'm your virtual assistant. May I know your name please?"
+      );
+    }
+
+    // Add message to chat
+    function addMessage(content, isBot = true, showQuickReplies = false, quickReplies = []) {
+      const messagesContainer = document.getElementById('chatMessages');
+      
+      const messageDiv = document.createElement('div');
+      messageDiv.className = `message ${isBot ? 'bot' : 'user'}`;
+      
+      const avatar = document.createElement('div');
+      avatar.className = 'message-avatar';
+      avatar.innerHTML = isBot ? '<i class="fa-solid fa-robot"></i>' : '<i class="fa-solid fa-user"></i>';
+      
+      const messageContent = document.createElement('div');
+      messageContent.className = 'message-content';
+      messageContent.innerHTML = content;
+      
+      messageDiv.appendChild(avatar);
+      messageDiv.appendChild(messageContent);
+      
+      messagesContainer.appendChild(messageDiv);
+      
+      // Add quick replies if provided
+      if (showQuickReplies && quickReplies.length > 0) {
+        const quickRepliesDiv = document.createElement('div');
+        quickRepliesDiv.className = 'quick-replies';
+        
+        quickReplies.forEach(reply => {
+          const btn = document.createElement('button');
+          btn.className = 'quick-reply-btn';
+          btn.textContent = reply;
+          btn.onclick = () => handleQuickReply(reply);
+          quickRepliesDiv.appendChild(btn);
+        });
+        
+        const lastMessage = messagesContainer.lastChild;
+        lastMessage.appendChild(quickRepliesDiv);
+      }
+      
+      messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    }
+
+    function addBotMessage(content, showQuickReplies = false, quickReplies = []) {
+      addMessage(content, true, showQuickReplies, quickReplies);
+    }
+
+    function addUserMessage(content) {
+      addMessage(content, false);
+    }
+
+    // Show typing indicator
+    function showTyping() {
+      const messagesContainer = document.getElementById('chatMessages');
+      const typingDiv = document.createElement('div');
+      typingDiv.className = 'message bot';
+      typingDiv.id = 'typingIndicator';
+      typingDiv.innerHTML = `
+        <div class="message-avatar"><i class="fa-solid fa-robot"></i></div>
+        <div class="typing-indicator">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      `;
+      messagesContainer.appendChild(typingDiv);
+      messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    }
+
+    function hideTyping() {
+      const typing = document.getElementById('typingIndicator');
+      if (typing) typing.remove();
+    }
+
+    // Smart message processing
+    function processMessage(message) {
+      const msg = message.toLowerCase().trim();
+      
+      // Store in conversation history
+      conversationHistory.push({ user: message, timestamp: Date.now() });
+      
+      // Handle name collection
+      if (awaitingName) {
+        userName = message.trim();
+        awaitingName = false;
+        
+        setTimeout(() => {
+          hideTyping();
+          addBotMessage(
+            `🙏 <strong>Namaste ${userName}!</strong><br><br>` +
+            `Nice to meet you! I'm here to help you with information about BS International.<br><br>` +
+            `You can ask me about:<br>` +
+            `• Team members (by name or phone number)<br>` +
+            `• Products and services<br>` +
+            `• Company information<br>` +
+            `• How to place an order<br><br>` +
+            `What would you like to know?`,
+            true,
+            ['Team Members', 'Products', 'Jackets', 'Order Process', 'Contact Info']
+          );
+        }, 800);
+        return;
+      }
+      
+      // Phone number lookup (two-way)
+      const phoneMatch = msg.match(/\d{10}/);
+      if (phoneMatch) {
+        const phone = phoneMatch[0];
+        const member = chatData.team.find(m => m.phoneClean === phone);
+        
+        if (member) {
+          setTimeout(() => {
+            hideTyping();
+            addBotMessage(
+              `✅ <strong>Number Identified!</strong><br><br>` +
+              createContactCard(member)
+            );
+          }, 800);
+          return;
+        } else {
+          setTimeout(() => {
+            hideTyping();
+            addBotMessage(
+              `❌ Sorry ${userName}, this number <strong>${phone}</strong> is not registered with BS International.<br><br>` +
+              `Our official contact numbers are:<br>` +
+              chatData.team.map(m => `• ${m.phone} (${m.name})`).join('<br>')
+            );
+          }, 800);
+          return;
+        }
+      }
+      
+      // Team member name lookup
+      for (const member of chatData.team) {
+        if (member.keywords.some(keyword => msg.includes(keyword))) {
+          setTimeout(() => {
+            hideTyping();
+            addBotMessage(
+              `👤 <strong>${member.name}</strong><br><br>` +
+              createContactCard(member)
+            );
+          }, 800);
+          return;
+        }
+      }
+      
+      // Greeting detection
+      if (['hi', 'hello', 'hey', 'namaste', 'good morning', 'good afternoon'].some(g => msg.includes(g))) {
+        setTimeout(() => {
+          hideTyping();
+          addBotMessage(
+            `🙏 Namaste ${userName}! How can I assist you today?`,
+            true,
+            ['Team Members', 'Products', 'Jackets', 'Order Now']
+          );
+        }, 600);
+        return;
+      }
+      
+      // Team/Staff query
+      if (['team', 'staff', 'members', 'who works', 'employees'].some(k => msg.includes(k))) {
+        setTimeout(() => {
+          hideTyping();
+          addBotMessage(
+            `👥 <strong>Our Leadership Team:</strong><br><br>` +
+            chatData.team.map(m => 
+              `<strong>${m.name}</strong> - ${m.role}<br>` +
+              `📞 ${m.phone}<br>` +
+              (m.email ? `📧 ${m.email}<br>` : '') +
+              `<br>`
+            ).join('') +
+            `<em>You can ask about any team member by name or phone number!</em>`
+          );
+        }, 1000);
+        return;
+      }
+      
+      // Products query
+      if (['product', 'what do you make', 'items', 'catalog', 'available'].some(k => msg.includes(k))) {
+        setTimeout(() => {
+          hideTyping();
+          addBotMessage(
+            `👕 <strong>Custom Garment Manufacturing</strong><br><br>` +
+            `${userName}, we manufacture garments <strong>according to your order and specifications</strong>. We can make:<br><br>` +
+            `🧥 <strong>Jackets:</strong> Windcheater, Silicon, Polar Fleece, Without Polar, Winter, Bomber<br>` +
+            `👕 <strong>T-Shirts:</strong> Full, Round Neck, Polo<br>` +
+            `👖 <strong>Pants:</strong> Regular, Box, Joggers, Half Pants<br>` +
+            `👔 <strong>Trousers:</strong> Straight, Joggers, Baggy<br>` +
+            `👕 <strong>Shirts:</strong> Full Shirts<br>` +
+            `👗 <strong>One Piece:</strong> Custom designs<br><br>` +
+            `✨ <strong>We make custom garments with your choice!</strong><br>` +
+            `📦 <strong>Minimum Order:</strong> 50 pieces<br><br>` +
+            `<a href="products.html">View All Products →</a>`,
+            true,
+            ['Jackets Details', 'Order Now', 'Get Quote']
+          );
+        }, 1200);
+        return;
+      }
+      
+      // Jackets specific
+      if (['jacket', 'windcheater', 'silicon', 'polar', 'fleece', 'bomber', 'winter'].some(k => msg.includes(k))) {
+        setTimeout(() => {
+          hideTyping();
+          addBotMessage(
+            `🧥 <strong>Our Jacket Collection:</strong><br><br>` +
+            `<strong>1. Windcheater Jackets</strong><br>Water-resistant, lightweight<br><br>` +
+            `<strong>2. Silicon Jackets</strong><br>Premium insulation, soft finish<br><br>` +
+            `<strong>3. Polar Fleece Jackets</strong><br>Warm & comfortable<br><br>` +
+            `<strong>4. Jackets Without Polar</strong><br>All-season wear<br><br>` +
+            `<strong>5. Winter Jackets</strong><br>Heavy-duty cold protection<br><br>` +
+            `<strong>6. Bomber Jackets</strong><br>Stylish & trendy<br><br>` +
+            `🎨 <strong>Customization Available:</strong><br>` +
+            `✓ Any color combination<br>` +
+            `✓ Logo printing & embroidery<br>` +
+            `✓ Size customization<br>` +
+            `✓ Bulk orders welcome<br><br>` +
+            `📦 <strong>Minimum Order:</strong> 50 pieces<br>` +
+            `💰 Competitive pricing for bulk orders<br><br>` +
+            `<a href="https://wa.me/9779851158989?text=I want to order jackets">Order via WhatsApp →</a>`
+          );
+        }, 1200);
+        return;
+      }
+      
+      // Order/Purchase query
+      if (['order', 'buy', 'purchase', 'want to order', 'how to order'].some(k => msg.includes(k))) {
+        setTimeout(() => {
+          hideTyping();
+          addBotMessage(
+            `🛒 <strong>How to Place an Order:</strong><br><br>` +
+            `<strong>Step 1:</strong> Choose your product type<br>` +
+            `<strong>Step 2:</strong> Share your design/requirements<br>` +
+            `<strong>Step 3:</strong> Get a quote within 24 hours<br>` +
+            `<strong>Step 4:</strong> Production starts after approval<br><br>` +
+            `📞 <strong>Contact Options:</strong><br>` +
+            `• Call: <a href="tel:+9779851158989">+977-9851158989</a><br>` +
+            `• WhatsApp: <a href="https://wa.me/9779851158989">+977-9851158989</a><br>` +
+            `• Email: <a href="mailto:info@nabindhakal28.com.np">info@nabindhakal28.com.np</a><br><br>` +
+            `📦 <strong>Minimum Order Quantity:</strong> 50 pieces<br>` +
+            `🏭 <strong>Monthly Capacity:</strong> 5000+ garments`,
+            true,
+            ['Call Now', 'WhatsApp', 'View Products']
+          );
+        }, 1000);
+        return;
+      }
+      
+      // Location/Address query
+      if (['location', 'address', 'where', 'factory', 'office'].some(k => msg.includes(k))) {
+        setTimeout(() => {
+          hideTyping();
+          addBotMessage(
+            `📍 <strong>BS International Pvt. Ltd.</strong><br><br>` +
+            `<strong>Address:</strong><br>` +
+            `Dhapakhel-23, Lalitpur<br>` +
+            `Bagmati Province, Nepal<br><br>` +
+            `<strong>Working Hours:</strong><br>` +
+            `Mon-Fri: 9:00 AM - 6:00 PM<br>` +
+            `Saturday: 9:00 AM - 3:00 PM<br>` +
+            `Sunday: Closed<br><br>` +
+            `<a href="https://maps.google.com/?q=27.6720,85.3240" target="_blank">View on Google Maps →</a>`
+          );
+        }, 800);
+        return;
+      }
+      
+      // Contact/Phone query
+      if (['phone', 'contact', 'number', 'call', 'whatsapp'].some(k => msg.includes(k))) {
+        setTimeout(() => {
+          hideTyping();
+          addBotMessage(
+            `📞 <strong>Contact Information:</strong><br><br>` +
+            `<strong>Main Office:</strong> <a href="tel:+9779851158989">+977-9851158989</a><br><br>` +
+            `<strong>Team Direct Lines:</strong><br>` +
+            chatData.team.map(m => `• ${m.name}: ${m.phone}`).join('<br>') +
+            `<br><br><strong>Email:</strong> <a href="mailto:info@nabindhakal28.com.np">info@nabindhakal28.com.np</a><br><br>` +
+            `<a href="https://wa.me/9779851158989">💬 Chat on WhatsApp</a>`
+          );
+        }, 900);
+        return;
+      }
+      
+      // Default - AI-like response
+      setTimeout(() => {
+        hideTyping();
+        addBotMessage(
+          `I understand you're asking about "${message}".<br><br>` +
+          `${userName}, I can help you with:<br>` +
+          `• Finding team members by name or phone<br>` +
+          `• Information about our products<br>` +
+          `• How to place an order<br>` +
+          `• Company contact details<br><br>` +
+          `Try asking: "Who is Bharat Sharma?" or "What jackets do you make?" or "9851158989"`,
+          true,
+          ['Team Members', 'Products', 'Order Now', 'Contact Info']
+        );
+      }, 800);
+    }
+
+    // Create contact card HTML
+    function createContactCard(member) {
+      return `
+        <div class="contact-card">
+          <div class="contact-card-item">
+            <i class="fa-solid fa-briefcase"></i>
+            <strong>${member.role}</strong>
+          </div>
+          <div class="contact-card-item">
+            <i class="fa-solid fa-phone"></i>
+            <a href="tel:${member.phone}">${member.phone}</a>
+          </div>
+          ${member.email ? `
+            <div class="contact-card-item">
+              <i class="fa-solid fa-envelope"></i>
+              <a href="mailto:${member.email}">${member.email}</a>
+            </div>
+          ` : ''}
+          ${member.website ? `
+            <div class="contact-card-item">
+              <i class="fa-solid fa-globe"></i>
+              <a href="https://${member.website}" target="_blank">${member.website}</a>
+            </div>
+          ` : ''}
+          <div style="margin-top: 0.5rem; padding-top: 0.5rem; border-top: 1px solid #cbd5e1; font-size: 0.85rem; color: #64748b;">
+            ${member.bio}
+          </div>
+        </div>
+      `;
+    }
+
+    // Handle quick reply clicks
+    function handleQuickReply(reply) {
+      addUserMessage(reply);
+      showTyping();
+      processMessage(reply);
+    }
+
+    // Send message function
+    function sendMessage() {
+      const input = document.getElementById('chatInput');
+      const message = input.value.trim();
+      
+      if (!message) return;
+      
+      addUserMessage(message);
+      input.value = '';
+      
+      showTyping();
+      processMessage(message);
+    }
+
+    // Event listeners
+    document.getElementById('sendButton').addEventListener('click', sendMessage);
+    
+    document.getElementById('chatInput').addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        sendMessage();
+      }
+    });
+
+    // Initialize chat on load
+    window.addEventListener('load', () => {
+      initChat();
+    });
+  </script>
+</body>
+</html>

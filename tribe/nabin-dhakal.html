@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nabin Dhakal (cpnnabin) - Managing Director | BS International Pvt. Ltd.</title>
+  <meta name="description" content="Nabin Dhakal (cpnnabin) - Managing Director at BS International Pvt. Ltd. Leading Nepal's garment manufacturing with innovation and vision." />
+  
+  <link rel="icon" type="image/x-icon" href="https://gcmnepal-my.sharepoint.com/personal/19754_globalcollege_edu_np/_layouts/15/embed.aspx?UniqueId=203a7f98-0087-4c3c-8d01-c56eaecc6fdb" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style>
+    :root {
+      --nepal-red: #DC143C;
+      --nepal-blue: #003893;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      overflow-x: hidden;
+    }
+    .font-montserrat {
+      font-family: 'Montserrat', sans-serif;
+    }
+    .card-hover {
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .card-hover:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+    }
+    .nav-link {
+      position: relative;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #DC143C;
+      transition: width 0.3s ease;
+    }
+    .nav-link:hover::after, .nav-link.active::after {
+      width: 100%;
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .profile-img {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+    /* Photo Viewer Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+    }
+    .modal.active {
+      display: flex;
+    }
+    .modal-content {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
+    .modal-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    .modal-close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 40px;
+      color: white;
+      cursor: pointer;
+      background: none;
+      border: none;
+      transition: transform 0.3s ease;
+    }
+    .modal-close:hover {
+      transform: rotate(90deg);
+    }
+    .view-photo-btn {
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .view-photo-btn:hover {
+      opacity: 0.8;
+      transform: scale(1.02);
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+  
+  <!-- Photo Viewer Modal -->
+  <div id="photoModal" class="modal">
+    <button id="modalClose" class="modal-close">&times;</button>
+    <div class="modal-content">
+      <img id="modalImage" src="" alt="Nabin Dhakal - Full View" class="modal-img">
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-slate-900/95 backdrop-blur-md text-white border-b border-white/10 shadow-lg">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+      <a href="index.html" class="flex items-center gap-3 font-montserrat text-xl font-extrabold group">
+        <span class="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-red-600 to-blue-800 text-white shadow-lg transition transform group-hover:scale-110">
+          <i class="fa-solid fa-shirt"></i>
+        </span>
+        <div class="flex flex-col">
+          <span class="bg-gradient-to-r from-white to-slate-200 bg-clip-text text-transparent leading-none">BS International</span>
+          <span class="text-[10px] text-red-400 font-medium tracking-widest uppercase">Made in Nepal</span>
+        </div>
+      </a>
+      
+      <button id="menuBtn" class="lg:hidden text-2xl text-white hover:text-red-400 transition" aria-label="Open menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      
+      <div id="navLinks" class="hidden items-center gap-8 text-sm font-semibold lg:flex">
+        <a href="index.html" class="nav-link text-white/90 hover:text-red-400 transition">Home</a>
+        <a href="about.html" class="nav-link text-white/90 hover:text-red-400 transition">About</a>
+        <a href="brands.html" class="nav-link text-white/90 hover:text-red-400 transition">Brands</a>
+        <a href="products.html" class="nav-link text-white/90 hover:text-red-400 transition">Products</a>
+        <a href="team.html" class="nav-link active text-white/90 hover:text-red-400 transition">Team</a>
+        <a href="contact.html" class="nav-link text-white/90 hover:text-red-400 transition">Contact</a>
+        <a href="tel:+9779851158989" class="ml-4 rounded-full bg-red-600 px-5 py-2 text-white transition hover:bg-red-700 shadow-md hover:scale-105">
+          <i class="fa-solid fa-phone mr-2"></i> Call Now
+        </a>
+      </div>
+    </nav>
+    
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden border-t border-white/10 bg-slate-900 px-6 pb-6 lg:hidden">
+      <div class="flex flex-col gap-4 pt-4 text-sm font-semibold text-center">
+        <a href="index.html" class="nav-link block text-white/90 hover:text-red-400 py-2">Home</a>
+        <a href="about.html" class="nav-link block text-white/90 hover:text-red-400 py-2">About</a>
+        <a href="brands.html" class="nav-link block text-white/90 hover:text-red-400 py-2">Brands</a>
+        <a href="products.html" class="nav-link block text-white/90 hover:text-red-400 py-2">Products</a>
+        <a href="team.html" class="nav-link active block text-white/90 hover:text-red-400 py-2">Team</a>
+        <a href="contact.html" class="nav-link block text-white/90 hover:text-red-400 py-2">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="pt-24">
+    <!-- Profile Header -->
+    <section class="relative overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-red-900 text-white py-20">
+      <div class="absolute inset-0 opacity-10" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+      <div class="mx-auto max-w-4xl px-6 text-center relative z-10">
+        <!-- Profile Picture with View Option -->
+        <div class="relative w-40 h-40 mx-auto mb-6">
+          <div class="w-40 h-40 rounded-full overflow-hidden border-8 border-white/20 shadow-2xl profile-img view-photo-btn" id="mainProfileImg">
+            <img id="profileMainImg" src="" alt="Nabin Dhakal (cpnnabin) - Managing Director" class="w-full h-full object-cover">
+          </div>
+          <div class="absolute -bottom-2 right-6">
+            <button onclick="openPhotoViewer()" class="flex items-center gap-2 rounded-full bg-blue-600 px-4 py-2 text-white text-sm font-semibold shadow-lg transition hover:bg-blue-700 hover:scale-105">
+              <i class="fa-solid fa-expand"></i> View Photo
+            </button>
+          </div>
+        </div>
+        
+        <h1 class="font-montserrat text-4xl md:text-5xl font-extrabold mb-2">Nabin Dhakal</h1>
+        <div class="flex items-center justify-center gap-2 mb-4">
+          <span class="text-xl text-red-400 font-semibold">Managing Director</span>
+          <span class="text-gray-300">•</span>
+          <span class="text-lg text-blue-300 font-medium">@cpnnabin</span>
+        </div>
+        <p class="text-lg text-slate-200 max-w-2xl mx-auto">Leading Nepal's garment manufacturing with innovation, vision, and a commitment to global quality standards.</p>
+        
+        <div class="mt-8 flex flex-wrap justify-center gap-4">
+          <a href="tel:+9779869596970" class="inline-flex items-center gap-2 rounded-full bg-green-600 px-6 py-3 text-white font-semibold shadow-lg transition hover:bg-green-700 hover:-translate-y-1">
+            <i class="fa-solid fa-phone"></i> Call: +977-9869596970
+          </a>
+          <a href="mailto:cpnnabingovnp@gmail.com" class="inline-flex items-center gap-2 rounded-full bg-blue-600 px-6 py-3 text-white font-semibold shadow-lg transition hover:bg-blue-700 hover:-translate-y-1">
+            <i class="fa-solid fa-envelope"></i> Email Me
+          </a>
+          <a href="https://nabindhakal28.com.np" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-full bg-purple-600 px-6 py-3 text-white font-semibold shadow-lg transition hover:bg-purple-700 hover:-translate-y-1">
+            <i class="fa-solid fa-globe"></i> Visit Website
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Profile Content -->
+    <section class="py-20 bg-white">
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="grid gap-12 lg:grid-cols-3">
+          <!-- Main Content -->
+          <div class="lg:col-span-2 space-y-8">
+            <div class="card-hover reveal bg-white rounded-3xl p-8 shadow-lg border border-slate-100">
+              <h2 class="font-montserrat text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
+                <i class="fa-solid fa-user-circle text-blue-600"></i> About Nabin Dhakal (cpnnabin)
+              </h2>
+              <div class="space-y-4 text-slate-700 leading-relaxed">
+                <p>
+                  Nabin Dhakal, whose nickname is <strong class="text-blue-800">cpnnabin</strong>, is the <strong class="text-slate-900">Managing Director</strong> of <strong class="text-slate-900">BS International Pvt. Ltd.</strong>, one of Nepal's growing garment manufacturing companies.
+                </p>
+                <p>
+                  Born on <strong class="text-slate-900">April 28, 2004</strong>, in <strong class="text-slate-900">Bagchaur-9, Bathan, Salyan District</strong>, located in <strong class="text-slate-900">Karnali Province, Nepal</strong>, he represents a new-gen leader pushing Nepali manufacturing toward global relevance.
+                </p>
+                <p>
+                  As Managing Director, Nabin leads the company's <strong class="text-slate-900">strategic planning and daily operations</strong>. His responsibilities include overseeing <strong class="text-slate-900">production processes, quality control systems, supply chain management, and business development initiatives</strong>. He ensures that BS International consistently delivers high-quality garments while maintaining efficiency and international standards.
+                </p>
+                <p>
+                  Known by his nickname <strong class="text-blue-800">cpnnabin</strong>, he is recognized for a <strong class="text-slate-900">forward-thinking mindset</strong>, strong focus on <strong class="text-slate-900">innovation</strong>, and commitment to <strong class="text-slate-900">sustainable and ethical manufacturing</strong>. He actively works on expanding the company's reach from the local market to <strong class="text-slate-900">regional and global export platforms</strong>, strengthening brand value and competitiveness.
+                </p>
+                <p>
+                  Nabin also prioritizes <strong class="text-slate-900">employee growth and skill development</strong>, believing that people are the core asset of any successful organization. His leadership style blends discipline, creativity, and long-term vision.
+                </p>
+                <p>
+                  With ambition, clarity, and purpose, <strong class="text-blue-800">Nabin Dhakal (cpnnabin)</strong> continues to build BS International Pvt. Ltd. as a brand that proudly represents <strong class="text-slate-900">Nepali craftsmanship on the global stage</strong>.
+                </p>
+              </div>
+            </div>
+
+            <div class="card-hover reveal bg-white rounded-3xl p-8 shadow-lg border border-slate-100">
+              <h2 class="font-montserrat text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
+                <i class="fa-solid fa-briefcase text-purple-600"></i> Key Responsibilities & Leadership
+              </h2>
+              <div class="grid md:grid-cols-2 gap-4">
+                <div class="flex items-start gap-3 p-4 bg-blue-50 rounded-lg">
+                  <i class="fa-solid fa-chess-king text-blue-600 text-xl mt-1"></i>
+                  <div>
+                    <h3 class="font-semibold text-slate-900 mb-1">Strategic Leadership</h3>
+                    <p class="text-sm text-slate-600">Directing company vision and growth strategy</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3 p-4 bg-purple-50 rounded-lg">
+                  <i class="fa-solid fa-industry text-purple-600 text-xl mt-1"></i>
+                  <div>
+                    <h3 class="font-semibold text-slate-900 mb-1">Operations Excellence</h3>
+                    <p class="text-sm text-slate-600">Overseeing production and quality standards</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3 p-4 bg-green-50 rounded-lg">
+                  <i class="fa-solid fa-users-gear text-green-600 text-xl mt-1"></i>
+                  <div>
+                    <h3 class="font-semibold text-slate-900 mb-1">Team Development</h3>
+                    <p class="text-sm text-slate-600">Mentoring 60+ skilled professionals</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3 p-4 bg-red-50 rounded-lg">
+                  <i class="fa-solid fa-earth-asia text-red-600 text-xl mt-1"></i>
+                  <div>
+                    <h3 class="font-semibold text-slate-900 mb-1">Global Expansion</h3>
+                    <p class="text-sm text-slate-600">Building international partnerships</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-hover reveal bg-gradient-to-br from-blue-50 to-purple-50 rounded-3xl p-8 shadow-lg border border-blue-100">
+              <h2 class="font-montserrat text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
+                <i class="fa-solid fa-lightbulb text-yellow-600"></i> Vision & Mission
+              </h2>
+              <blockquote class="text-lg text-slate-700 italic leading-relaxed border-l-4 border-blue-600 pl-6">
+                "To position BS International as a globally recognized brand that showcases the exceptional quality and craftsmanship of Nepali manufacturing while creating sustainable employment and growth opportunities for our community."
+              </blockquote>
+              <div class="mt-6 p-4 bg-white/50 rounded-lg">
+                <p class="text-slate-700"><strong class="text-slate-900">Mission:</strong> To deliver world-class garments through innovative processes, ethical practices, and skilled Nepali craftsmanship, establishing Nepal as a competitive manufacturing hub in the global market.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sidebar -->
+          <div class="space-y-6">
+            <div class="card-hover reveal bg-white rounded-3xl p-8 shadow-lg border border-slate-100 sticky top-24">
+              <h3 class="font-montserrat text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                <i class="fa-solid fa-address-card text-blue-600"></i> Profile Details
+              </h3>
+              <div class="space-y-4">
+                <!-- Profile Picture in Sidebar with View Option -->
+                <div class="flex justify-center mb-2">
+                  <div class="relative">
+                    <div class="w-32 h-32 rounded-full overflow-hidden border-4 border-blue-100 shadow-lg profile-img view-photo-btn">
+                      <img id="profileSidebarImg" src="" alt="Nabin Dhakal (cpnnabin)" class="w-full h-full object-cover">
+                    </div>
+                    <div class="absolute -bottom-2 -right-2">
+                      <button onclick="openPhotoViewer()" class="flex items-center justify-center w-8 h-8 rounded-full bg-blue-600 text-white text-xs shadow-md transition hover:bg-blue-700">
+                        <i class="fa-solid fa-expand"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                
+                <div>
+                  <p class="text-xs font-bold uppercase text-slate-500 mb-2">Full Name</p>
+                  <p class="text-slate-900 font-semibold">Nabin Dhakal <span class="text-blue-600">(@cpnnabin)</span></p>
+                </div>
+                <div>
+                  <p class="text-xs font-bold uppercase text-slate-500 mb-2">Position</p>
+                  <p class="text-slate-900 font-semibold">Managing Director</p>
+                </div>
+                <div>
+                  <p class="text-xs font-bold uppercase text-slate-500 mb-2">Company</p>
+                  <p class="text-slate-900 font-semibold">BS International Pvt. Ltd.</p>
+                </div>
+                <div>
+                  <p class="text-xs font-bold uppercase text-slate-500 mb-2">Date of Birth</p>
+                  <p class="text-slate-900 font-semibold">April 28, 2004</p>
+                </div>
+                <div>
+                  <p class="text-xs font-bold uppercase text-slate-500 mb-2">Hometown</p>
+                  <p class="text-sm text-slate-600">Bagchaur-9, Bathan, Salyan<br/>Karnali Province, Nepal</p>
+                </div>
+                
+                <div class="pt-4 border-t border-slate-200">
+                  <p class="text-xs font-bold uppercase text-slate-500 mb-3">Contact Details</p>
+                  <div class="space-y-3">
+                    <a href="tel:+9779869596970" class="flex items-center gap-3 p-3 bg-green-50 rounded-lg hover:bg-green-100 transition group">
+                      <i class="fa-solid fa-phone text-green-600 text-lg"></i>
+                      <div>
+                        <p class="text-xs text-slate-500">Phone</p>
+                        <p class="text-sm font-semibold text-slate-900 group-hover:text-green-600">+977-9869596970</p>
+                      </div>
+                    </a>
+                    <a href="mailto:cpnnabingovnp@gmail.com" class="flex items-center gap-3 p-3 bg-blue-50 rounded-lg hover:bg-blue-100 transition group">
+                      <i class="fa-solid fa-envelope text-blue-600 text-lg"></i>
+                      <div>
+                        <p class="text-xs text-slate-500">Email</p>
+                        <p class="text-sm font-semibold text-slate-900 group-hover:text-blue-600 break-all">cpnnabingovnp@gmail.com</p>
+                      </div>
+                    </a>
+                    <a href="https://nabindhakal28.com.np" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-3 bg-purple-50 rounded-lg hover:bg-purple-100 transition group">
+                      <i class="fa-solid fa-globe text-purple-600 text-lg"></i>
+                      <div>
+                        <p class="text-xs text-slate-500">Website</p>
+                        <p class="text-sm font-semibold text-slate-900 group-hover:text-purple-600">nabindhakal28.com.np</p>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="pt-4 border-t border-slate-200">
+                  <p class="text-xs font-bold uppercase text-slate-500 mb-3">Current Location</p>
+                  <p class="text-sm text-slate-600">
+                    <i class="fa-solid fa-location-dot text-red-600 mr-2"></i>
+                    Dhapakhel-23, Lalitpur<br/>
+                    <span class="ml-6">Bagmati Province, Nepal</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- This space is now empty after removing Quick Connect section -->
+            <div class="h-0"></div>
+            
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Links -->
+    <section class="py-20 bg-slate-50">
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="text-center mb-12">
+          <h2 class="font-montserrat text-2xl font-bold text-slate-900 mb-4">Explore More</h2>
+          <div class="mx-auto h-1 w-20 rounded bg-gradient-to-r from-blue-700 to-red-600"></div>
+        </div>
+        <div class="grid gap-6 md:grid-cols-3">
+          <a href="team.html" class="card-hover bg-white rounded-2xl p-8 shadow-lg border border-slate-100 text-center group">
+            <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 text-2xl mx-auto mb-4 group-hover:scale-110 transition">
+              <i class="fa-solid fa-users"></i>
+            </div>
+            <h3 class="font-montserrat text-lg font-bold text-slate-900 mb-2">Meet the Team</h3>
+            <p class="text-sm text-slate-600">View our complete leadership team</p>
+          </a>
+          <a href="about.html" class="card-hover bg-white rounded-2xl p-8 shadow-lg border border-slate-100 text-center group">
+            <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center text-purple-600 text-2xl mx-auto mb-4 group-hover:scale-110 transition">
+              <i class="fa-solid fa-building"></i>
+            </div>
+            <h3 class="font-montserrat text-lg font-bold text-slate-900 mb-2">About BS International</h3>
+            <p class="text-sm text-slate-600">Learn about our company history</p>
+          </a>
+          <a href="products.html" class="card-hover bg-white rounded-2xl p-8 shadow-lg border border-slate-100 text-center group">
+            <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center text-green-600 text-2xl mx-auto mb-4 group-hover:scale-110 transition">
+              <i class="fa-solid fa-shirt"></i>
+            </div>
+            <h3 class="font-montserrat text-lg font-bold text-slate-900 mb-2">Our Products</h3>
+            <p class="text-sm text-slate-600">Browse our garment catalog</p>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-slate-950 pt-16 pb-8 text-white relative border-t-4 border-red-700">
+    <div class="mx-auto max-w-7xl px-6 text-center relative z-10">
+      <div class="flex items-center justify-center gap-3 mb-4">
+         <i class="fa-solid fa-shirt text-red-500 text-2xl"></i>
+         <h3 class="font-montserrat text-2xl font-bold">BS International Pvt. Ltd.</h3>
+      </div>
+      <p class="text-slate-400 max-w-lg mx-auto">Providing quality garment manufacturing services to Nepal and beyond since 2017.</p>
+      
+      <div class="mt-8 flex justify-center gap-4">
+        <a href="#" class="flex h-10 w-10 items-center justify-center rounded-full bg-slate-800 text-white transition hover:bg-[#1877F2]"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="flex h-10 w-10 items-center justify-center rounded-full bg-slate-800 text-white transition hover:bg-[#E4405F]"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="flex h-10 w-10 items-center justify-center rounded-full bg-slate-800 text-white transition hover:bg-[#0077B5]"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://wa.me/9779851158989" class="flex h-10 w-10 items-center justify-center rounded-full bg-slate-800 text-white transition hover:bg-[#25D366]"><i class="fab fa-whatsapp"></i></a>
+      </div>
+      
+      <div class="mt-12 border-t border-slate-800 pt-8 space-y-4">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500">
+          <div>
+            © <span id="currentYear"></span> BS International Pvt. Ltd. 
+            <span class="hidden md:inline mx-2">|</span> 
+            <span class="text-slate-400">Made in Nepal 🇳🇵</span>
+          </div>
+          <div class="text-slate-400">
+            <span id="companyAge"></span>
+          </div>
+        </div>
+        <div class="text-xs text-slate-500">
+           Design & Development by <a href="https://nabindhakal28.com.np" target="_blank" class="text-blue-400 hover:text-white transition font-semibold">@cpnnabin</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button id="backToTop" class="fixed bottom-6 right-6 hidden h-12 w-12 items-center justify-center rounded-full bg-red-600 text-white shadow-lg transition hover:-translate-y-1 hover:bg-red-700 z-50" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script>
+    // Function to load image with multiple fallbacks
+    function loadProfileImage(imgElement) {
+      const imagePaths = [
+        '7466AA.jpg',           // Root folder
+        './7466AA.jpg',         // Root folder with relative path
+        'images/7466AA.jpg',    // Images folder
+        './images/7466AA.jpg',  // Images folder with relative path
+        'assets/7466AA.jpg',    // Assets folder
+        'assets/images/7466AA.jpg' // Assets/images folder
+      ];
+
+      let currentIndex = 0;
+      let loadedPath = '';
+
+      function tryNextImage() {
+        if (currentIndex >= imagePaths.length) {
+          // All paths failed, show fallback
+          imgElement.style.display = 'none';
+          imgElement.parentElement.classList.add('profile-img');
+          return;
+        }
+
+        const testImage = new Image();
+        testImage.onload = function() {
+          loadedPath = imagePaths[currentIndex];
+          imgElement.src = loadedPath;
+          imgElement.style.display = 'block';
+          imgElement.parentElement.classList.remove('profile-img');
+        };
+        testImage.onerror = function() {
+          currentIndex++;
+          tryNextImage();
+        };
+        testImage.src = imagePaths[currentIndex];
+      }
+
+      tryNextImage();
+      return loadedPath;
+    }
+
+    // Photo Viewer Functionality
+    let currentImagePath = '';
+    
+    function openPhotoViewer() {
+      const modal = document.getElementById('photoModal');
+      const modalImage = document.getElementById('modalImage');
+      
+      // Try to get image from main profile or sidebar
+      const mainImg = document.getElementById('profileMainImg');
+      const sidebarImg = document.getElementById('profileSidebarImg');
+      
+      if (mainImg && mainImg.src && mainImg.src !== '') {
+        modalImage.src = mainImg.src;
+      } else if (sidebarImg && sidebarImg.src && sidebarImg.src !== '') {
+        modalImage.src = sidebarImg.src;
+      } else {
+        // If no image loaded, try to load it directly
+        modalImage.src = '7466AA.jpg';
+      }
+      
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closePhotoViewer() {
+      const modal = document.getElementById('photoModal');
+      modal.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+
+    // Modal event listeners
+    document.getElementById('modalClose').addEventListener('click', closePhotoViewer);
+    document.getElementById('photoModal').addEventListener('click', function(e) {
+      if (e.target === this) closePhotoViewer();
+    });
+
+    // Escape key to close modal
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closePhotoViewer();
+    });
+
+    // Click on profile images to open viewer
+    document.querySelectorAll('.view-photo-btn').forEach(btn => {
+      btn.addEventListener('click', openPhotoViewer);
+    });
+
+    // Load profile images when page loads
+    document.addEventListener('DOMContentLoaded', function() {
+      const mainImg = document.getElementById('profileMainImg');
+      const sidebarImg = document.getElementById('profileSidebarImg');
+      
+      if (mainImg) loadProfileImage(mainImg);
+      if (sidebarImg) loadProfileImage(sidebarImg);
+    });
+
+    // Mobile Menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      const icon = menuBtn.querySelector('i');
+      icon.classList.toggle('fa-bars');
+      icon.classList.toggle('fa-xmark');
+    });
+
+    // Back to Top
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 500) {
+        backToTop.classList.remove('hidden');
+        backToTop.classList.add('flex');
+      } else {
+        backToTop.classList.add('hidden');
+        backToTop.classList.remove('flex');
+      }
+      revealOnScroll();
+    });
+
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Reveal Animation
+    const revealElements = document.querySelectorAll('.reveal');
+    function revealOnScroll() {
+      const windowHeight = window.innerHeight;
+      revealElements.forEach(el => {
+        const elementTop = el.getBoundingClientRect().top;
+        if (elementTop < windowHeight - 100) el.classList.add('visible');
+      });
+    }
+    revealOnScroll();
+
+    // Footer Dynamic Year
+    function calculateCompanyAge() {
+      const foundingDate = new Date('2017-02-07');
+      const today = new Date();
+      const diffTime = Math.abs(today - foundingDate);
+      const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+      const years = Math.floor(diffDays / 365);
+      const months = Math.floor((diffDays % 365) / 30);
+      return { years, months };
+    }
+
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+    const age = calculateCompanyAge();
+    document.getElementById('companyAge').textContent = `Serving since Feb 7, 2017 | ${age.years}+ Years of Excellence`;
+  </script>
+</body>
+</html>
